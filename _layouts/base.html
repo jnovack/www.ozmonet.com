@@ -18,6 +18,7 @@
     <link rel="stylesheet" media="screen" href="/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" media="screen" href="/css/font-awesome.css" type="text/css" />
     <link rel="stylesheet" media="screen" href="/css/category_list.css" type="text/css" />
+    <link rel="stylesheet" media="screen" href="/css/style.css" type="text/css" />
     {% if site.google_analytics %}
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -32,15 +33,6 @@
     {% endif %}
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-      article {
-        padding-bottom: 20px;
-      }
-    </style>
   </head>
   <body>
 
@@ -82,7 +74,7 @@
             {{ content }}
 
       <footer>
-        <small>generated at: {{ site.time }}</small>
+        <small>generated at: {{ site.time }} by <a href="https://github.com/mojombo/jekyll">Jekyll</a></small>
       </footer>
 
     </div> 

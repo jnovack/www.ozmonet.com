@@ -1,0 +1,16 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+article {
+    padding-bottom: 20px;
+}
+footer {
+    color: #efefef;
+}
+footer a {
+    color: #efefef;
+}
+footer a:hover {
+    color: #cfcfcf;
+}
