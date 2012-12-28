@@ -76,7 +76,7 @@ Unfortunately, with so many ad-servers popping up each week, it was a pain to co
 
 #### Appendix
 
-adblock.sed
+##### adblock.sed
 
     /@@.*/d;
     /^!.*/d;
@@ -86,7 +86,7 @@ adblock.sed
     s#*#.*#g;
     s,\$.*$,,g;
 
-squid.conf
+##### squid.conf
 
     http_port 3128
     hierarchy_stoplist cgi-bin ?
@@ -102,7 +102,7 @@ squid.conf
     refresh_pattern ^gopher:        1440    0%      1440
     refresh_pattern .               0       20%     4320
     acl all src 0.0.0.0/0.0.0.0
-    acl our_networks src 172.30.3.0/24
+    acl our_networks src 192.168.10.0/24
     cache deny all
     http_access allow our_networks
     http_reply_access allow all
@@ -111,7 +111,7 @@ squid.conf
     coredump_dir /var/spool/squid
     redirect_program /usr/local/bin/squidGuard -d -c /usr/local/squidGuard/squidGuard.conf
 
-squidGuard.conf
+##### squidGuard.conf
 
     dbhome /usr/local/squidGuard/db
     logdir /var/log/squid

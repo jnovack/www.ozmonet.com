@@ -45,7 +45,10 @@ This is not exactly a cut-n-paste script as you will be prompted the first time 
     # Set NeDi to run every half-hour
     su nedi -
     crontab –e
-        0 0 * * * /usr/local/nedi/nedi.pl -b > /usr/local/nedi/log/nedi-backup.lastrun 2>&1
-        30 0 * * * /usr/local/nedi/nedi.pl -cod > /usr/local/nedi/log/nedi.lastrun 2>&1
-        */30 1-23 * * * /usr/local/nedi/nedi.pl -cod > /usr/local/nedi/log/nedi.lastrun 2>&1
+
+Add the following to crontab:
+
+    0 0 * * * /usr/local/nedi/nedi.pl -b > /usr/local/nedi/log/nedi-backup.lastrun 2>&1
+    30 0 * * * /usr/local/nedi/nedi.pl -cod > /usr/local/nedi/log/nedi.lastrun 2>&1
+    */30 1-23 * * * /usr/local/nedi/nedi.pl -cod > /usr/local/nedi/log/nedi.lastrun 2>&1
 

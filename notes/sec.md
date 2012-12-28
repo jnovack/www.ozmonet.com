@@ -1,21 +1,29 @@
 ---
-layout: project
+layout: note
 title: Simple Event Correlator
 promote: true
-excerpt: Some advanced tips and tricks I found out while using the most awesomest piece of code written for parsing log files.
+excerpt: Configurations and scripts I found collected while using the most awesomest piece of code written for parsing log files.
 last_modified: 2011-12-28 17:42:00 -0500
 ---
-Simple Event Correlator (sec.pl) is AWESOME. But you probably came here knowing that. Below are some intermediate to advanced tips I have picked up along the way.
-Defining a Map for Data
-Problem: I had a number of ports on a switch that needed to be identified individually. To the server team, merely saying Gig3/39 was down did not mean diddly-squat. To be efficient, they needed proper server names.
-Solution: Rather than build x number of rules for each port, containing names and actions, I combined ALL the rules using a hashmap. First, I created a friendlynames.txt which held the translations. In the .sec file, first load all the hashes as contexts. Then, when a monitored line comes through with a matching pattern it will trigger the action ONLY if the hash exists (checked as a context). Finally, return the hash as a variable and do what you will with it.
-    /etc/sec/friendlynames.txt
-    ==========================
+Simple Event Correlator (sec.pl) is AWESOME. But you probably came here knowing that.
+
+#### Defining a Map for Data
+
+##### Problem
+
+I had a number of ports on a switch that needed to be identified individually. To the server team, merely saying Gi3/39 on 4THFLSWITCH was down did not mean diddly-squat. To be efficient, they needed proper server names.
+
+##### Solution
+
+Rather than build *x* number of rules for each port, containing names and actions, I combined ALL the rules using a hashmap. First, I created a `friendlynames.txt` which held the translations. In the .sec file, first load all the hashes as contexts. Then, when a monitored line comes through with a matching pattern it will trigger the action ONLY if the hash exists (checked as a context). Finally, return the hash as a variable and do what you will with it.
+
+##### /etc/sec/friendlynames.txt
+
     GigabitEthernet1/37=TEST SERVER
     GigabitEthernet3/39=IMPORTANT SERVER
 
-    /etc/sec/testing.sec
-    ====================
+##### /etc/sec/testing.sec
+
     type=Single
     desc=Load hashes at startup 
     ptype=SubStr 
@@ -33,5 +41,8 @@ Solution: Rather than build x number of rules for each port, containing names an
     context= =($hash{"$1"}) 
     action=eval %host ( return $hash{"$1"}; ); logonly **** Uh-oh! Problem with %host ****
 
-Credits
+#### Credits
 Thanks to the crew at the Simple-Evcorr Mailing List for their assistance.
+
+ 1. [http://www.mail-archive.com/simple-evcorr-users@lists.sourceforge.net/msg00980.html](http://www.mail-archive.com/simple-evcorr-users@lists.sourceforge.net/msg00965.html)
+ 2. [http://www.mail-archive.com/simple-evcorr-users@lists.sourceforge.net/msg00980.html](http://www.mail-archive.com/simple-evcorr-users@lists.sourceforge.net/msg00980.html)
