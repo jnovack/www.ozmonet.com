@@ -54,7 +54,7 @@ module Jekyll
       base = File.join(site.source, dir)
       return unless File.exists?(base)
 
-      entries  = Dir.chdir(base) { site.filter_entries(Dir['**/*']) }
+      entries  = Dir.chdir(base) { site.filter_entries(Dir['**/*.md']) }
 
       # Reverse chronological order
       entries = entries.reverse
