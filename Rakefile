@@ -1,6 +1,6 @@
+Dir['.ruby/*.rake'].each { |file| load(file) }
+
 task :default => :server
-deploy_branch  = "master"
-deploy_dir     = "_heroku" 
 
 desc 'Clean up generated site'
 task :clean do
@@ -8,18 +8,13 @@ task :clean do
 end
 
 desc 'Build site with Jekyll'
-task :build => :clean do
+task :build => [:clean, :cats] do
   jekyll
 end
 
 desc 'Start server with --auto'
 task :server => :clean do
   jekyll('--server --auto')
-end
-
-desc 'Build and deploy'
-task :deploy => :build do
-  sh 'rsync -rtzh --progress --delete _site/ username@servername:/var/www/websitename/'
 end
 
 desc 'Check links for site already running on localhost:4000'
@@ -58,11 +53,6 @@ end
 
 def jekyll(opts = '')
   sh 'jekyll ' + opts
-end
-
-def less(opts = '')
-  Dir::mkdir('stylesheets') unless File.directory?('stylesheets')
-  sh 'lessc -x _less/styles.less > stylesheets/styles.css'
 end
 
 desc "deploy basic rack app to heroku"
