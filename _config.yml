@@ -1,0 +1,33 @@
+# standard jekyll configuration
+
+permalink: date
+pygments: true
+exclude: ['Rakefile', 'README.md']
+markdown: rdiscount
+
+# configuration required for some pages
+
+domain: www.ozmonet.com
+title: Dalliance
+tagline: /ˈdalēəns/ n. 1. waste of time in frivolous action or in dawdling
+author:
+  name: Justin J. Novack
+  email: jnovack@gmail.com
+  github: jnovack
+  twitter: jnovack
+
+# configuration for ehancements, uncomment to enable
+
+# feedburner:
+#   id: feedburnerid
+
+google_analytics:
+  account: UA-2540999-2
+
+github:
+  username: jnovack
+
+disqus:
+  id: ozmonet
+
+permalink: /:year/:month/:day/:title

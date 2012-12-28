@@ -1,0 +1,17 @@
+---
+layout: base
+---
+      <div class="row">
+          {% if page.status %}
+          <div class="span12">
+            <div class="alert alert-error alert-block">
+              This page has been classified as <span class="label label-important">{{ page.status }}</span>.  Information may be incorrect or outdated.
+            </div>
+          </div>
+          {% endif %}
+          <div id="content" class="span12">
+            <h3>{{ page.title }}</h3>
+            <h5>Last Modified: {{ page.last_modified }}</h5>
+            {{ content }}
+          </div>
+      </div>

@@ -1,0 +1,27 @@
+---
+layout: sidebar
+description: My blog posts
+---
+{% for post in site.posts %}
+<article>
+  <header>
+    <h2>
+        <a href="{{ post.url }}" rel="bookmark" title="Permanent link to ">{{ post.title }}</a>
+    </h2>
+    <h5><time>{{ post.date | date: '%B' }} {{ post.date | date: '%e' }}, {{ post.date | date: '%Y' }}</time>
+    {% if post.categories %}
+      <br/>
+      {% for cat in post.categories %}
+        <a href="/categories/{{cat}}.html"><span class="label label-info">{{ cat }}</span></a>
+      {% endfor %}
+    {% endif %}
+    </h5>
+  </header>
+  {{ post.content | split:'<!--break-->' | first }}
+  {% if post.content contains '<!--break-->' %}
+    <a class="readmore" href="{{ post.url }}">read more</a>
+  {% endif %}
+</article>
+{% endfor %}
+
+
