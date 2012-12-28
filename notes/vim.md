@@ -2,6 +2,7 @@
 layout: note
 title: Vim
 last_modified: 2010-12-28 12:34:00 -0500
+excerpt: Vim is more than just an editor, it is a way of life.
 ---
 #### Colors while in 'sudo'
 

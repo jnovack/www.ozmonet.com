@@ -1,7 +1,7 @@
 ---
 layout: note
 title: Network-Wide Adblock
-expert: How-To Impliment a Network-Wide Adblock solution for devices which cannot benefit from browser based adblocking.
+excerpt: How-To Impliment a Network-Wide Adblock solution for devices which cannot benefit from browser based adblocking.
 status: stale
 last_modified: 2008-10-23 00:00:00 +0000
 ---
