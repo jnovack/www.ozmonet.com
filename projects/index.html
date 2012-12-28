@@ -1,0 +1,28 @@
+---
+layout: none
+title: Projects
+description: Project list
+---
+{% sorted_for post in site.projects reversed sort_by:last_modified %}
+<div class="hover span4">
+<article>
+  <header>
+    <h2>
+      <a href="/projects/{{ post.filename }}.html" rel="bookmark">{{ post.title }}</a>
+    </h2>
+    <h5>
+      <time>{{ post.last_modified | date_to_long_string }}</time>
+      {% if post.status != nil %}
+      <div class="pull-right">
+        <span class='label
+        {% if post.status == "stale" %}label-important{% endif %}
+        '>{{ post.status }}</span>
+      </div>
+      {% endif %}
+    </h5>
+  </header>
+  {{ post.excerpt }}
+</article>
+</div>
+{% cycle 'close rows': nil, nil, '</div><div class="row">' %}
+{% endsorted_for %}

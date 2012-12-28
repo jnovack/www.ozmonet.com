@@ -1,0 +1,18 @@
+---
+layout: none
+title: Notebook
+description: Notebook
+---
+{% sorted_for post in site.notes reversed sort_by:last_modified %}
+<div class="hover span4">
+<article>
+  <header>
+    <h2>
+        <a href="/notes/{{ post.filename }}.html" rel="bookmark">{{ post.title }}</a>
+    </h2>
+    <h5><time>{{ post.last_modified | date_to_long_string }}</time></h5>
+  </header>
+  {{ post.excerpt }}
+</article>
+</div>
+{% endsorted_for %}
