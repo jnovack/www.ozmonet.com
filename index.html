@@ -17,7 +17,7 @@ description: A description about my blog homepage
             <h3>{{ note.title }}</h3>
             <h5><time>{{ note.modified | date: '%B' }} {{ note.modified | date: '%e' }}, {{ note.modified | date: '%Y' }}</time></h5>
             <p>{{ note.excerpt }}</p>
-            <p><a class="btn" href="/notes/{{ note.filename }}.html">More details »</a></p>
+            <p><a class="btn" href="/notes/{{ note.filename }}.html">View article »</a></p>
           </div>
         {% endif %}
       {% endsorted_for %}
@@ -33,7 +33,10 @@ description: A description about my blog homepage
             </h2>
             <h5><time>{{ site.posts.first.date | date: '%B' }} {{ site.posts.first.date | date: '%e' }}, {{ site.posts.first.date | date: '%Y' }}</time></h5>
           </header>
-          {{ site.posts.first.content }}
+          {{ site.posts.first.content | split:'<!--break-->' | first }}
+          {% if site.posts.first.content contains '<!--break-->' %}
+            <a class="readmore" href="{{ site.posts.first.url }}">read more</a>
+          {% endif %}
         </article>
         </div>
       </div>
