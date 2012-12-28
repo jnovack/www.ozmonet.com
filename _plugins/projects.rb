@@ -21,7 +21,11 @@ module Jekyll
 
       @projectdata = self.read_yaml(File.join(base, dir), name)
       @projectdata['filename'] = File.basename(name, ".md")
-      @projectdata['modified'] = @projectdata['last_modified'] || File.mtime(File.join(dir, name))
+      if (@projectdata.include?('last_modified'))
+        @projectdata['modified'] = @projectdata['last_modified']
+      else 
+        @projectdata['modified'] = File.mtime(File.join(dir, name))
+      end
       @projectdata['content'] = markdownify(self.content)
     end
 
@@ -56,7 +60,7 @@ module Jekyll
       entries = entries.reverse
       entries.each do |f|
           project = Project.new(site, site.source, dir, f)
-          @@projects << Project.projectdata if Project.publish?
+          @@projects << project.projectdata if project.publish?
       end
     end
 
@@ -66,7 +70,7 @@ module Jekyll
   end
 
   # Jekyll hook - the generate method is called by jekyll, and generates all of the category pages.
-  class Generateprojects < Generator
+  class GenerateProjects < Generator
     safe true
     priority :low
 
