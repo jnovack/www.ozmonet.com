@@ -11,7 +11,7 @@ layout: base
           {% endif %}
           <div id="content" class="span12">
             <h3>{{ page.title }}</h3>
-            <h5>Last Modified: {{ page.last_modified }}</h5>
+            <h5><time>{{ page.last_modified | date: '%B' }} {{ page.last_modified | date: '%e' }}, {{ page.last_modified | date: '%Y' }}</time></h5>
             {{ content }}
           </div>
       </div>
