@@ -4,23 +4,29 @@ description: A description about my blog homepage
 ---
       <div class="hero-unit">
         <div class="media">
-          <img class="pull-left" style="padding: 10px;" src="http://www.gravatar.com/avatar/46ad823a3c12f55ee1103eeec268bc54?s=128">
-          <h1>Hello, world!</h1>
-          <p>This is my site, there are many like it, but this one is mine.</p>
+          <div class="media-body">
+            <h1>dal·li·ance</h1>
+            <h5>/ˈdalēəns/</h5>
+            <p>Noun</p>
+            <ol style="padding-left: 20px">
+              <li>waste of time in frivolous action or in dawdling.</li>
+              <li>brief or casual involvement with something.</li>
+            </ol>
+          </div>
         </div>
       </div>
       <div class="row">
-          <div class="span12"><span class="label label-info">Latest notebook updates</span></div>
-      {% sorted_for note in site.notes reversed sort_by:modified %}
-      {% if note.promote %}
-          <div class="span4">
-            <h3>{{ note.title }}</h3>
-            <h5><time>{{ note.modified | date: '%B' }} {{ note.modified | date: '%e' }}, {{ note.modified | date: '%Y' }}</time></h5>
-            <p>{{ note.excerpt }}</p>
-            <p><a class="btn" href="/notes/{{ note.filename }}.html">View article »</a></p>
-          </div>
-        {% endif %}
-      {% endsorted_for %}
+        <div class="span12"><span class="label label-info">Latest project updates</span></div>
+        {% sorted_for project in site.projects reversed sort_by:modified %}
+          {% if project.promote %}
+            <div class="span4">
+              <h3>{{ project.title }}</h3>
+              <h5><time>{{ project.modified | date: '%B' }} {{ project.modified | date: '%e' }}, {{ project.modified | date: '%Y' }}</time></h5>
+              <p>{{ project.excerpt }}</p>
+              <p><a class="btn" href="/projects/{{ project.filename }}.html">View project »</a></p>
+            </div>
+          {% endif %}
+        {% endsorted_for %}
       </div>
       <hr>
       <div class="row">
@@ -39,4 +45,18 @@ description: A description about my blog homepage
           {% endif %}
         </article>
         </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="span12"><span class="label label-info">Latest notebook entries</span></div>
+        {% sorted_for note in site.notes reversed sort_by:modified %}
+          {% if note.promote %}
+            <div class="span4">
+              <h3>{{ note.title }}</h3>
+              <h5><time>{{ note.modified | date: '%B' }} {{ note.modified | date: '%e' }}, {{ note.modified | date: '%Y' }}</time></h5>
+              <p>{{ note.excerpt }}</p>
+              <p><a class="btn" href="/notes/{{ note.filename }}.html">View article »</a></p>
+            </div>
+          {% endif %}
+        {% endsorted_for %}
       </div>
