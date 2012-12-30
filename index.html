@@ -17,10 +17,10 @@ description: A description about my blog homepage
       </div>
       <div class="row">
         <div class="span12"><span class="label label-info">Latest project updates</span></div>
-        {% sorted_for project in site.projects reversed sort_by:modified %}
+          {% sorted_for project in site.projects reversed sort_by:modified %}
           {% if project.promote %}
-            <div class="span4">
-              <h3>{{ project.title }}</h3>
+            <div class="hover span4">
+              <h3><a href="/projects/{{ project.filename }}.html">{{ project.title }}</a></h3>
               <h5><time>{{ project.modified | date: '%B' }} {{ project.modified | date: '%e' }}, {{ project.modified | date: '%Y' }}</time></h5>
               <p>{{ project.excerpt }}</p>
               <p><a class="btn" href="/projects/{{ project.filename }}.html">View project »</a></p>
@@ -30,29 +30,25 @@ description: A description about my blog homepage
       </div>
       <hr>
       <div class="row">
-        <div id="content" class="span12">
-        <span class="label label-info">Latest blog post</span>
-        <article>
-          <header>
+        <div class="span12"><span class="label label-info">Latest blog post</span></div>
+        <div class="hover span12">
             <h2>
               <a href="{{ site.posts.first.url }}" rel="bookmark" title="Permanent link to ">{{ site.posts.first.title }}</a>
             </h2>
             <h5><time>{{ site.posts.first.date | date: '%B' }} {{ site.posts.first.date | date: '%e' }}, {{ site.posts.first.date | date: '%Y' }}</time></h5>
-          </header>
-          {{ site.posts.first.content | split:'<!--break-->' | first }}
-          {% if site.posts.first.content contains '<!--break-->' %}
-            <a class="readmore" href="{{ site.posts.first.url }}">read more</a>
-          {% endif %}
-        </article>
-        </div>
+            {{ site.posts.first.content | split:'<!--break-->' | first }}
+            {% if site.posts.first.content contains '<!--break-->' %}
+              <a class="readmore" href="{{ site.posts.first.url }}">read more</a>
+            {% endif %}
+          </div>
       </div>
       <hr>
       <div class="row">
         <div class="span12"><span class="label label-info">Latest notebook entries</span></div>
         {% sorted_for note in site.notes reversed sort_by:modified %}
           {% if note.promote %}
-            <div class="span4">
-              <h3>{{ note.title }}</h3>
+            <div class="hover span4">
+              <h3><a href="/notes/{{ note.filename }}.html">{{ note.title }}</a></h3>
               <h5><time>{{ note.modified | date: '%B' }} {{ note.modified | date: '%e' }}, {{ note.modified | date: '%Y' }}</time></h5>
               <p>{{ note.excerpt }}</p>
               <p><a class="btn" href="/notes/{{ note.filename }}.html">View article »</a></p>
