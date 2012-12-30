@@ -55,7 +55,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                    {% sorted_for project in site.projects sort_by:title %}
-                   <li><a href="/projects/{{ note.filename }}.html">{{ project.title }}</a></li>
+                   <li><a href="/projects/{{ project.filename }}.html">{{ project.title }}</a></li>
                    {% endsorted_for %}
                 </ul>
               </li>
