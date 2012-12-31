@@ -107,7 +107,7 @@ You can move blocks of text delimited by patterns. For example, assume you have 
     .fi
     .Rh "DESCRIPTION"
     Writes the fields of a system data structure into the
-    status array.  
+    status array.
     These fields contain (among other
     things) information about the location of the file,
     access privileges, owner, and time of last modification.
@@ -115,7 +115,7 @@ You can move blocks of text delimited by patterns. For example, assume you have 
     .IP "\fBfilename\fR" 15n
     A character string variable or constant containing
     the UNIX pathname for the file whose status you want
-    to retrieve.  
+    to retrieve.
 
 Suppose that it is decided to move the SYNTAX paragraph below the DESCRIPTION paragraph. Using pattern matching, you can move blocks of text on all 150 pages with one command!
 

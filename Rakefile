@@ -77,7 +77,7 @@ desc 'Generate categories pages'
 task :cats do
   puts "Generating categories..."
   sh 'rm -rf categories'
-  Dir::mkdir('categories') 
+  Dir::mkdir('categories')
   require 'rubygems'
   require 'jekyll'
   include Jekyll::Filters

@@ -23,7 +23,7 @@ module Jekyll
       @notedata['filename'] = File.basename(name, ".md")
       if (@notedata.include?('last_modified'))
         @notedata['modified'] = @notedata['last_modified']
-      else 
+      else
         @notedata['modified'] = File.mtime(File.join(dir, name))
       end
       @notedata['content'] = markdownify(self.content)

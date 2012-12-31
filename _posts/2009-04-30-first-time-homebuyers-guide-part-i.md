@@ -1,6 +1,6 @@
 ---
 layout: post
-title: First-Time Homebuyers Guide - Part I 
+title: First-Time Homebuyers Guide - Part I
 excerpt: Starting the process of buying a home is daunting, I hope to walk you through some of my experiences.
 tags: [life, money]
 categories: [homebuyers guide]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Google TV is not a Media Center Replacement 
+title: Google TV is not a Media Center Replacement
 excerpt: After purchasing my first Logitech Revue, it becomes the lightning rod of my hatred.
 tags: [googletv]
 categories: [technology]

@@ -1,7 +1,7 @@
 ---
 layout: note
 title: Unnoc
-excerpt: 
+excerpt:
 status: stale
 last_modified: 2008-07-26 22:49:00 +0000
 ---
@@ -15,14 +15,14 @@ This process VIOLATES SELinux policies, you will have to disable SELinux to comp
 
     # Install Dag's repository RPM
     rpm -Uhv http://apt.sw.be/redhat/el5/en/i386/dag/RPMS/rpmforge-release-0.3.6-1.el5.rf.i386.rpm
-    
+
     # Install required packages from both repositories (separated for accounting purposes)
     yum -y install httpd php mysql mysql-server php-mysql perl subversion perl-Crypt-SSLeay perl-XML-LibXML perl-XML-Parser perl-Net-SNMP
     yum -y install perl-IO-Socket-SSL perl-Mail-POP3Client perl-Class-MethodMaker perl-Math-BigInt-FastCalc perl-libwww-perl rrdtool
-    
+
     # Install Net-Ping-External from CPAN
     perl -MCPAN -e 'install Net::Ping::External'
-    
+
     # Download, build, and install SNMP Session which includes the appropriate BER.pm
     cd ~
     wget http://www.switch.ch/misc/leinen/snmp/perl/dist/SNMP_Session-1.12.tar.gz
@@ -31,7 +31,7 @@ This process VIOLATES SELinux policies, you will have to disable SELinux to comp
     perl Makefile.PL
     make test
     make install
-    
+
     # Download, build, and install the Virtual Infrastructure Perl Toolkit
     cd ~
     wget http://superb-west.dl.sourceforge.net/sourceforge/viperltoolkit/viperltoolkit-beta1.zip
@@ -40,7 +40,7 @@ This process VIOLATES SELinux policies, you will have to disable SELinux to comp
     perl Makefile.PL
     make test
     make install
-    
+
     # Download, build, and install Unnoc (Finally!)
     cd /usr/local/
     svn co https://unnoc.svn.sourceforge.net/svnroot/unnoc/trunk/ unnoc/
@@ -48,14 +48,14 @@ This process VIOLATES SELinux policies, you will have to disable SELinux to comp
     ./perl-module-checker.pl
     useradd unnoc
     chown -R unnoc.apache *
-    
+
     # Configure MySQL
     cd /usr/local/unnoc/
     service mysqld start
     mysqladmin create unnoc
     mysql unnoc < mysql_table
-    
-    # Link Unnoc 
+
+    # Link Unnoc
     ln -s /usr/local/unnoc/unnoc/ /var/www/html/unnoc
     ln -s /usr/local/unnoc/unnoc/etc/unnoc.conf /etc/unnoc.conf
     # Configure Unnoc

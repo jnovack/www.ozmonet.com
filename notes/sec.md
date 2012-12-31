@@ -25,8 +25,8 @@ Rather than build *x* number of rules for each port, containing names and action
 ##### /etc/sec/testing.sec
 
     type=Single
-    desc=Load hashes at startup 
-    ptype=SubStr 
+    desc=Load hashes at startup
+    ptype=SubStr
     continue=TakeNext
     pattern=SEC_STARTUP|SEC_RESTART
     context=SEC_INTERNAL_EVENT
@@ -35,10 +35,10 @@ Rather than build *x* number of rules for each port, containing names and action
 
     #Aug  1 12:14:54 switchname 362351: %LINK-3-UPDOWN: Interface GigabitEthernet1/37, changed state to down
     type=Single
-    desc=Fire Event 
-    ptype=RegExp  
+    desc=Fire Event
+    ptype=RegExp
     pattern=%LINK-3-UPDOWN: Interface ([\w\/]+), changed state to down
-    context= =($hash{"$1"}) 
+    context= =($hash{"$1"})
     action=eval %host ( return $hash{"$1"}; ); logonly **** Uh-oh! Problem with %host ****
 
 #### Credits

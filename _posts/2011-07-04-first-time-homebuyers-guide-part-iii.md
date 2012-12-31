@@ -1,7 +1,7 @@
 ---
 layout: post
 title: First-Time Homebuyers Guide - Part III
-excerpt: With MLS papers in hand, you are ready to actual visit some properties. 
+excerpt: With MLS papers in hand, you are ready to actual visit some properties.
 tags: [life, money]
 categories: [homebuyers guide]
 last_updated: yyyy-mm-dd

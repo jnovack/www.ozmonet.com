@@ -20,4 +20,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('category_list', Jekyll::CategoryList) 
+Liquid::Template.register_tag('category_list', Jekyll::CategoryList)

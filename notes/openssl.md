@@ -1,7 +1,7 @@
 ---
 layout: note
 title: OpenSSL
-excerpt: No matter how many times I use openssl or ssh-keygen, I can never remember the damn syntax... 
+excerpt: No matter how many times I use openssl or ssh-keygen, I can never remember the damn syntax...
 promote: true
 last_modified: 2012-06-12 13:37:00 -0500
 ---

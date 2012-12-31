@@ -1,7 +1,7 @@
 ---
 layout: post
-title: First-Time Homebuyers Guide - Part II 
-excerpt: After you've completed getting your credit score, maximum monthly payment and pre-approvl letter, it's time to get your search on! 
+title: First-Time Homebuyers Guide - Part II
+excerpt: After you've completed getting your credit score, maximum monthly payment and pre-approvl letter, it's time to get your search on!
 tags: [life, money]
 categories: [homebuyers guide]
 last_updated: yyyy-mm-dd

@@ -17,7 +17,7 @@ This is not exactly a cut-n-paste script as you will be prompted the first time 
 
     # Install Dag's repository RPM
     rpm -Uhv http://apt.sw.be/redhat/el5/en/i386/dag/RPMS/rpmforge-release-0.3.6-1.el5.rf.i386.rpm
-    
+
     # Install all packages (separated for accounting purposes)
     yum -y install httpd php php-mysql mysql-server php-snmp php-gd
     yum -y install perl-Net-Telnet-Cisco perl-Algorithm-Diff perl-Net-Telnet perl-Net-SNMP net-snmp rrdtool perl-Net-SSH
@@ -25,7 +25,7 @@ This is not exactly a cut-n-paste script as you will be prompted the first time 
     # Start up services
     service httpd start
     service mysqld start
-    
+
     # Download and install NeDi
     wget http://www.nedi.ch/lib/exe/fetch.php?id=files%3Adownload\&cache=cache\&media=files\:nedi-1.0.tgz
     tar -xzvf nedi-1.0.tgz
@@ -38,10 +38,10 @@ This is not exactly a cut-n-paste script as you will be prompted the first time 
     chmod 775 –R /var/www/html
     chown nedi:apache –R /usr/local/nedi
     chgrp apache –R /var/www/html
-    
+
     # Edit nedi.conf with your settings
     vi /etc/nedi.conf
-    
+
     # Set NeDi to run every half-hour
     su nedi -
     crontab –e

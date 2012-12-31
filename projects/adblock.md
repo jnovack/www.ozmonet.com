@@ -46,7 +46,7 @@ If you have any issues, my squid.conf is attached below.
     [root@centos ~]# wget http://www.squidguard.org/Downloads/squidGuard-1.3.tar.gz
     [root@centos ~]# tar -xzvf squidGuard-1.3.tar.gz
     [root@centos ~]# cd squidGuard-1.3
-    [root@centos ~/squidGuard-1.3]# ./configure && make && make install 
+    [root@centos ~/squidGuard-1.3]# ./configure && make && make install
     [root@centos ~/squidGuard-1.3]# cd /usr/local/
     [root@centos /usr/local]# mkdir squidGuard/db/adblock/
     [root@centos /usr/local]# touch squidGuard/db/adblock/expressions
@@ -115,7 +115,7 @@ Unfortunately, with so many ad-servers popping up each week, it was a pain to co
 
     dbhome /usr/local/squidGuard/db
     logdir /var/log/squid
-   
+
     src my_network {
         ip              192.168.1.0/24
     }

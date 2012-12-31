@@ -23,7 +23,7 @@ module Jekyll
       @projectdata['filename'] = File.basename(name, ".md")
       if (@projectdata.include?('last_modified'))
         @projectdata['modified'] = @projectdata['last_modified']
-      else 
+      else
         @projectdata['modified'] = File.mtime(File.join(dir, name))
       end
       @projectdata['content'] = markdownify(self.content)

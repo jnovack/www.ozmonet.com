@@ -16,7 +16,7 @@ Let's get some definitions out of the way:
  * **Credit Score** - A score which sums up your entire Credit Report in terms of the companies risk on lending to you.  Lower Score = Higher Risk.
  * **Credit Reporting Agencies** - Equifax, Experian, and TransUnion.  Also called *Credit Bureaus*.
  * **FICO Score** -  The most widely accepted Credit Score, provided to consumers by Equifax.  This is what you want.
- * **Vantage Score** - An substandard calculation provided by TransUnion and Experian as an alternative to FICO. 
+ * **Vantage Score** - An substandard calculation provided by TransUnion and Experian as an alternative to FICO.
 
 The three Credit Reporting Agencies (Equifax, Experian, and TransUnion) each compile their OWN credit report on you, and calculate their own credit score on you.  Judgments by lenders are based on the compilation of all three.  You would be wise to get all three, make sure each credit reporting agency has the same information.
 

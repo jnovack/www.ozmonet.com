@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Google TV - Strike Two 
+title: Google TV - Strike Two
 excerpt: Google TV still fails to live up to what it COULD be.
 tags: [googletv, android]
 categories: [technology]
