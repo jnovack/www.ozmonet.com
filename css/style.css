@@ -6,7 +6,8 @@
 }
 
 div.hero-unit {
-    background: url(https://dl.dropbox.com/u/186154/photography/image01.jpg) 0px -280px;
+/*    background: url(https://dl.dropbox.com/u/186154/photography/image01.jpg) 0px -280px;
+*/    background: url(/img/herounit01.jpg);
     color: #ffffff;
     text-shadow: 2px 2px 2px #000, -1px -1px 1px #666;
 }
