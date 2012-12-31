@@ -1,6 +1,8 @@
-body (min-width: 980px) {
+@media (min-width: 980px) {
+  body {
     padding-top: 60px;
     padding-bottom: 40px;
+  }
 }
 div.span1 div.span2, div.span3, div.span4, div.span5 div.span6, div.span7, div.span8, div.span9 div.span10, div.span11, div.span12 {
     -webkit-transition: all 0.3s ease-in-out;
