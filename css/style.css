@@ -4,6 +4,12 @@
     padding-bottom: 40px;
   }
 }
+
+div.hero-unit {
+    background: url(https://dl.dropbox.com/u/186154/photography/image01.jpg) 0px -280px;
+    color: #ffffff;
+    text-shadow: 2px 2px 2px #000, -1px -1px 1px #666;
+}
 div.span1 div.span2, div.span3, div.span4, div.span5 div.span6, div.span7, div.span8, div.span9 div.span10, div.span11, div.span12 {
     -webkit-transition: all 0.3s ease-in-out;
     -webkit-border-radius: 6px;
