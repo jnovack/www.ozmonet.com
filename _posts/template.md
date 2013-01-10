@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 
+title:
 excerpt:
 tags: []
 categories: []
