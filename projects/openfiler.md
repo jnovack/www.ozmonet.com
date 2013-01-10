@@ -5,7 +5,7 @@ excerpt: Openfiler has an ABYSMAL support forum, they want you to pay for every 
 promote: true
 last_modified: 2009-03-31 15:48:00 -0500
 ---
-If you are looking for a nice easy NAS/SAN appliance, this is not the page you should be reading. Openfiler has an ABYSMAL support forum, they want you to pay for every piece of support, including the Administration Guide. The documentation is awful and the user community is not active. I merely document my findings so nobody else has to go through the pain of sifting through their awful forums. Yes, I do still use my Openfiler, it works for me^TM  and I do like it.
+If you are looking for a nice easy NAS/SAN appliance, this is not the page you should be reading. Openfiler has an ABYSMAL support forum, they want you to pay for every piece of support, including the Administration Guide. The documentation is awful and the user community is not active. I merely document my findings so nobody else has to go through the pain of sifting through their awful forums. Yes, I do still use my Openfiler, it works for me(tm)  and I do like it.
 
 Consider this an "Openfiler Quick Configuration Guide".
 
