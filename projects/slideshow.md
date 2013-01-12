@@ -47,17 +47,17 @@ Your mom.
 #### Install
 
  1. Copy ```Slideshow``` to ```~/Library/Screen Savers/```
- 2. Enter *System Preferences*
- 3. Select the *Recent Pictures Slideshow*
+ 2. Enter **System Preferences**
+ 3. Select the **Slideshow**
  4. Update the Screen Saver Options
  5. Run your screensaver.
 
 #### Options
 
- * Display_Name: Do you want to show the image name in the bottom right corner?
- * Directory: Set your pictures directory, defaulted to ```~/Pictures/```
- * Duration: In seconds, of the slideshow.  The more pictures you are showing, I recommend a longer rotation time.
- * Show Last _x_ Pictures:  How many pictures do you rotate? (minimum two (2))
+ * **Display Name:** Do you want to show the image name in the bottom right corner?
+ * **Directory:** Set your pictures directory, defaulted to ```~/Pictures/```
+ * **Duration:** In seconds, of the slideshow.  The more pictures you are showing, I recommend a longer rotation time.
+ * **Show Last _x_ Pictures:**  How many pictures do you rotate? (minimum two (2))
 
 #### References
 
