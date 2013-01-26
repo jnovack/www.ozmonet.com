@@ -59,6 +59,34 @@ Your mom.
  * **Duration:** In seconds, of the slideshow.  The more pictures you are showing, I recommend a longer rotation time.
  * **Show Last _x_ Pictures:**  How many pictures do you rotate? (minimum two (2))
 
+#### Errata
+
+The easier, simpler solution is just to make the following Applescript a Folder Action via Automator.  Then, initiate fullscreen quicklook mode on the first file in the directory.  Upon subsequent downloads of files, the Applescript will automatically select them.  The process is akin to pressing "up" or "down" on your keyboard while already in quicklook.
+
+However, this will ONLY display the last picture at all times, this does not rotate.  Not to say this is pointless, as it does have its uses.  If I am trying to constantly perfect a shot, I will use this to be able to view it on a larger screen.
+
+```applescript
+on run {input, parameters}
+
+  tell application "Finder"
+    set the_folder to container of (item 1 of input) as alias
+
+    if window 1 exists then
+        set the target of window 1 to the_folder
+    else
+        reveal the_folder
+    end if
+
+    select input as alias
+    activate
+    activate window 1
+
+  end tell
+
+  return input
+end run
+```
+
 #### References
 
  1. [http://apple.stackexchange.com/questions/24961/an-app-or-script-to-watch-folder-and-display-new-images-in-full-screen](http://apple.stackexchange.com/questions/24961/an-app-or-script-to-watch-folder-and-display-new-images-in-full-screen)
