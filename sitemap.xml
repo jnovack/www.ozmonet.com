@@ -4,20 +4,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>{{ site.baseuri }}/</loc>
+      <loc>{{ site.url }}/</loc>
       <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1</priority>
    </url>
    <url>
-      <loc>{{ site.baseuri }}/about.html</loc>
+      <loc>{{ site.url }}/about.html</loc>
       <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
 {% for post in site.posts %}
    <url>
-      <loc>{{ site.baseuri }}{{ post.url }}</loc>
+      <loc>{{ site.url }}{{ post.url }}</loc>
       <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
@@ -25,7 +25,7 @@
 {% endfor %}
 {% for note in site.notes %}
    <url>
-      <loc>{{ site.baseuri }}/notes/{{ note.filename }}.html</loc>
+      <loc>{{ site.url }}/notes/{{ note.filename }}.html</loc>
       <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
@@ -33,7 +33,7 @@
 {% endfor %}
 {% for project in site.projects %}
    <url>
-      <loc>{{ site.baseuri }}/projects/{{ project.filename }}.html</loc>
+      <loc>{{ site.url }}/projects/{{ project.filename }}.html</loc>
       <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
