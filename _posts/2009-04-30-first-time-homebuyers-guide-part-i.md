@@ -3,7 +3,7 @@ layout: post
 title: First-Time Homebuyers Guide - Part I
 excerpt: Starting the process of buying a home is daunting, I hope to walk you through some of my experiences.
 tags: [life, money]
-categories: [homebuyers guide]
+categories: [homebuyers_guide]
 last_updated: yyyy-mm-dd
 ---
 Buying your first home is probably the most stressful thing you'll ever have to do.  I am finding I am constantly going back and forth re-tweaking numbers; I wish someone made a list of things to do before even talking to a realtor!  Hopefully you can benefit from this series of articles on how to buy your first home.

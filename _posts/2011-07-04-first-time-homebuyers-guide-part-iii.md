@@ -3,7 +3,7 @@ layout: post
 title: First-Time Homebuyers Guide - Part III
 excerpt: With MLS papers in hand, you are ready to actual visit some properties.
 tags: [life, money]
-categories: [homebuyers guide]
+categories: [homebuyers_guide]
 last_updated: yyyy-mm-dd
 ---
 First, admit to yourself that you may not know everything. If you just glanced over that last statement, start this paragraph over again.  Why am I making you re-read it? Because when you are viewing a house, you are not likely to take in every little detail which may make or break your purchase.

@@ -3,7 +3,7 @@ layout: post
 title: First-Time Homebuyers Guide - Part II
 excerpt: After you've completed getting your credit score, maximum monthly payment and pre-approvl letter, it's time to get your search on!
 tags: [life, money]
-categories: [homebuyers guide]
+categories: [homebuyers_guide]
 last_updated: yyyy-mm-dd
 ---
 At this point, you should have your credit reports and scores, your maximum monthly payment for a mortgage, and your pre-approval letter from a bank which outlines the maximum you are able to finance.

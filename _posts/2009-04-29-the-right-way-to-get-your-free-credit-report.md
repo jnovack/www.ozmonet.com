@@ -3,7 +3,7 @@ layout: post
 title: The Right Way to get your Free Credit Report
 excerpt: A public service announcement regarding your credit report so you do not get taken advantage of by pirates.
 tags: [life, money]
-categories: [homebuyers guide]
+categories: [homebuyers_guide]
 last_updated: yyyy-mm-dd
 ---
 To everyone baffled by the tons of commercials with singing pirates and catchy jingles, consider this post a public service announcement regarding your credit report.
