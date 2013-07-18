@@ -8,6 +8,7 @@ markdown: redcarpet
 # configuration required for some pages
 
 domain: www.ozmonet.com
+url: http://www.ozmonet.com
 title: Dalliance
 tagline: /ˈdalēəns/ n. 1. waste of time in frivolous action or in dawdling
 author:
