@@ -12,9 +12,9 @@ task :build => [:clean, :cats] do
   jekyll
 end
 
-desc 'Start server with --auto'
+desc 'Start server with --watch'
 task :server => :clean do
-  jekyll('--server --auto')
+  jekyll('server --watch')
 end
 
 desc 'Check links for site already running on localhost:4000'
