@@ -39,7 +39,7 @@ module Jekyll
     #
     # Returns the HTML formatted String.
     def markdownify(input)
-      converter = @site.getConverterImpl(Jekyll::MarkdownConverter)
+      converter = @site.getConverterImpl(Jekyll::Converters::Markdown)
       converter.convert(input)
     end
   end
@@ -55,7 +55,6 @@ module Jekyll
       return unless File.exists?(base)
 
       entries  = Dir.chdir(base) { site.filter_entries(Dir['**/*.md']) }
-      #entries  = Dir.chdir(base) { site.filter_entries(Dir['**/*'].sort_by{ |f| File.mtime(f) }) }
 
       # Reverse chronological order
       entries = entries.reverse
@@ -81,5 +80,45 @@ module Jekyll
     end
   end
 
+
+  class NotelistTag < Liquid::Tag
+    def initialize(tag_name, markup, tokens)
+      @notes = NoteList.notes
+      @template_file = markup.strip
+      super
+    end
+
+    def load_teplate(file, context)
+      includes_dir = File.join(context.registers[:site].source, '_includes')
+
+      if File.symlink?(includes_dir)
+        return "Includes directory '#{includes_dir}' cannot be a symlink"
+      end
+
+      if file !~ /^[a-zA-Z0-9_\/\.-]+$/ || file =~ /\.\// || file =~ /\/\./
+        return "Include file '#{file}' contains invalid characters or sequences"
+      end
+
+      Dir.chdir(includes_dir) do
+        choices = Dir['**/*'].reject { |x| File.symlink?(x) }
+        if choices.include?(file)
+          source = File.read(file)
+        else
+          "Included file '#{file}' not found in _includes directory"
+        end
+      end
+
+    end
+
+    def render(context)
+      output = super
+      template = load_teplate(@template_file, context)
+
+      Liquid::Template.parse(template).render('notes' => @notes).gsub(/\t/, '')
+    end
+  end
+
+
 end
 
+Liquid::Template.register_tag('notelist', Jekyll::NotelistTag)

@@ -1,4 +1,4 @@
-# Title: project list tag for Jekyll
+# Title: Project list tag for Jekyll
 # Author: Frederic Hemberger http://frederic-hemberger.de
 # URL: https://raw.github.com/fhemberger/jekyll-projectlist/master/plugins/projectlist.rb
 # Description: TODO ;-)
@@ -39,7 +39,7 @@ module Jekyll
     #
     # Returns the HTML formatted String.
     def markdownify(input)
-      converter = @site.getConverterImpl(Jekyll::MarkdownConverter)
+      converter = @site.getConverterImpl(Jekyll::Converters::Markdown)
       converter.convert(input)
     end
   end
@@ -80,5 +80,45 @@ module Jekyll
     end
   end
 
+
+  class ProjectlistTag < Liquid::Tag
+    def initialize(tag_name, markup, tokens)
+      @projects = ProjectList.projects
+      @template_file = markup.strip
+      super
+    end
+
+    def load_teplate(file, context)
+      includes_dir = File.join(context.registers[:site].source, '_includes')
+
+      if File.symlink?(includes_dir)
+        return "Includes directory '#{includes_dir}' cannot be a symlink"
+      end
+
+      if file !~ /^[a-zA-Z0-9_\/\.-]+$/ || file =~ /\.\// || file =~ /\/\./
+        return "Include file '#{file}' contains invalid characters or sequences"
+      end
+
+      Dir.chdir(includes_dir) do
+        choices = Dir['**/*'].reject { |x| File.symlink?(x) }
+        if choices.include?(file)
+          source = File.read(file)
+        else
+          "Included file '#{file}' not found in _includes directory"
+        end
+      end
+
+    end
+
+    def render(context)
+      output = super
+      template = load_teplate(@template_file, context)
+
+      Liquid::Template.parse(template).render('projects' => @projects).gsub(/\t/, '')
+    end
+  end
+
+
 end
 
+Liquid::Template.register_tag('projectlist', Jekyll::ProjectlistTag)
