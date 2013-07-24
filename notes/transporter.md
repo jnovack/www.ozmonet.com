@@ -8,11 +8,11 @@ last_modified: 2013-07-23 00:00:00 -0400
 
 My Transporter from Connected Data is a hunk of shit.  It is SUPPOSED to be a private cloud solution that offers all the sharing, remote access and offsite backup advantages of Dropbox.  In my experience, the device is garbage and the Support team is worthless.  As you can read, they are intentionally avoiding any technical answers because they just do not fucking know.
 
-The reason for the support was to diagnose why a folder copied from into the "Connected Data" folder was not being properly synced on the second computer.  It is supposed to accomplish the same goal as Dropbox.  Drop a file on your computer into the synced folder, watch it appear on the other computer within the same folder.  This does not happen.
+The reason for the support was to diagnose why a folder copied from the first computer into the "Connected Data" folder was not being properly synced on the second computer.  It is supposed to accomplish the same goal as Dropbox.  Drop a file on your computer into the synced folder, watch it appear on the other computer within the same folder.  This does not happen reliably.  I would not bet this week's paycheck that it will occur.
 
 #### May 11
 
-As the initial communication was submitted via the web interface, I do not have a copy of it, the rest are emails.
+As the initial communication was submitted via the web interface, I do not have a copy of it.  However, the rest of the communications were via emails and documented.
 
     Support,
     
@@ -34,6 +34,8 @@ As the initial communication was submitted via the web interface, I do not have 
     Phone: 1-888-964-4607
     Mon - Fri ( 8am-8pm EST) Sat & Sun ( 9am-5pm EST)
 
+So, in other words, we are going to avoid answering the main question and concentrate on a single keyword you mentioned in the email.
+
 #### May 14
 
     Support,
@@ -49,6 +51,8 @@ As the initial communication was submitted via the web interface, I do not have 
 
 #### May 29
 
+Realizing I had not heard from them in two weeks, I sent the following again.
+
     Support, 
 
     I've been waiting for an answer for 14 days now (10 business), and the first response did not adequately answer my query.
@@ -60,7 +64,7 @@ As the initial communication was submitted via the web interface, I do not have 
 
 #### June 6
 
-Resubmitted last question via the web interface as it appears that nobody reads emails for 3 weeks.
+Resubmitted last question via the web interface as it appears that nobody reads emails for 3 weeks.  The auto-responder did it's job.
 
     Hi Justin,
 
@@ -73,6 +77,8 @@ Resubmitted last question via the web interface as it appears that nobody reads 
     Mon - Fri ( 8am-8pm EST) Sat & Sun ( 9am-5pm EST)
 
 #### June 10
+
+Since June 6th was a Thursday and the one person doing Support probably has off Fridays in the summer, my message had to wait until Monday to be answered.
 
     Hi Justin,
     Thank you for contacting Connected Data Support Center. This email is in regards to case number #324826 : Lack of responce..
@@ -88,6 +94,8 @@ Resubmitted last question via the web interface as it appears that nobody reads 
 
 ----
 
+Whatever program they have obviously does not have a search function by email address.  This also gives me a good idea of how many support cases have opened up within a single month.  Between May 10 (320652) and June 10th (324826), it is estimated that over 3500 support cases were made! (Assuming each support case increases the ticket number by 1).
+
     Case 320652.  The main issue is, I am not 100% confident my files are being "transported" properly. There is no indication it is not up to date (even when both machines say "up to date".
 
     The recommended answer I recieved was to drop files on the Transporter, and it will disperse them.  That's great, but if the whole point is to access your files when you are away, if I make a change on a remote offline laptop, it takes DAYS for the files to sync once back online.
@@ -96,14 +104,14 @@ Resubmitted last question via the web interface as it appears that nobody reads 
 
 #### June 12
 
+Once again, STILL DID NOT ANSWER ANY TECHNICAL QUESTION. Basically wasting both my time in reading this and the bandwidth required to send it.
+
     Hi Justin,
 
     Thank you for contacting Connected Data Support Center. This email is in regards to case number #324826 : Lack of responce..
 
-    When it comes to the speed of the files being uploaded do you have it selected to have a local copy? One Thing we have been seeing is that when you have this selected the Transporters pushes the file transfer to the background which to not cause any drops in performance on your machine is not the fastest. If you can select that you have no local copy it will not push to the background and move the files right then and there. 
-Yes there is a version two that has been announced. We don't have any data on this.  
-
-
+    When it comes to the speed of the files being uploaded do you have it selected to have a local copy? One Thing we have been seeing is that when you have this selected the Transporters pushes the file transfer to the background which to not cause any drops in performance on your machine is not the fastest. If you can select that you have no local copy it will not push to the background and move the files right then and there.
+    Yes there is a version two that has been announced. We don't have any data on this.
 
     Kind regards,
 
@@ -113,6 +121,8 @@ Yes there is a version two that has been announced. We don't have any data on th
 
 ----
 
+I am fed up at this point.  I am being treated as if EVERY EMAIL is my first email.  Either the support team is so huge that no two people have answered one of my emails, or the moron answering emails has the memory of a goldfish.
+
     I am sorry, this needs to be a little more clear.  
 
     Here is my example:  http://cl.ly/image/2q0B1Z3y112o
@@ -121,11 +131,13 @@ Yes there is a version two that has been announced. We don't have any data on th
 
     Are you suggesting that 14 DAYS is not enough to transfer more than 5MB WITHIN NETWORK on two machines?
 
-    On the Transporter website, I created the folder.  On MacMini, I enabled Local Copy and dropped in the iPhoto Library.  On the iMac I enabled Local Copy.   +After 14 DAYS, I see the folder is 5MB.
+    On the Transporter website, I created the folder.  On MacMini, I enabled Local Copy and dropped in the iPhoto Library.  On the iMac I enabled Local Copy.  After 14 DAYS, I see the folder is 5MB.
 
     I want to help, but I keep getting these vague "tech support" answers treating me like I'm retarded.  I'm not a user, I've written and contributed to many open-source projects,  give me to someone who can make changes or "has data on this" and I can help them track down bugs and perform diagnostics.
 
 ----
+
+AGAIN, STILL DID NOT ANSWER ANY TECHNICAL QUESTION.  I would have rather them said "yes, we are treating you like you are retarded because we are retarded" and I would have been happy.
 
     Hi Justin,
 
@@ -133,18 +145,13 @@ Yes there is a version two that has been announced. We don't have any data on th
 
     Thats something we have noticed. Tho if your wanting to bypass the connected data software and make sure all your files are getting to the Transporter you can use SMB/CIFS. This would not only be the fast file transfer method but would insure file transfer. By default it is not enabled by default but you can enable it from the management page. For more information on SMB/CIFS please visit http://www.filetransporter.com/knowledgebase/?article=AA-00264
 
-
-
     Kind regards,
 
-
     Connected Data Support
-
     Phone: 1-888-964-4607
     Mon - Fri ( 8am-8pm EST) Sat & Sun ( 9am-5pm EST)
 
 ----
-
 
     I'm not really concerned my files are on the transporter, I'm concerned with my files being on the other computers.
 
@@ -153,6 +160,8 @@ Yes there is a version two that has been announced. We don't have any data on th
     Is this being addressed in v2.0?
 
 ----
+
+READ: Oh! You said "2.0", let me copy and paste the v2.0 info without ANSWERING YOUR FUCKING QUESTION.
 
     Hi Justin,
 
@@ -173,6 +182,8 @@ Yes there is a version two that has been announced. We don't have any data on th
 
 #### June 24
 
+After 6 weeks, I've been "escalated" to the manager...
+
     Dear Justin,
 
     Sorry for the delayed response.  Has the Support agent requested a log file from you?  If not, please capture a log file while connected to your Transporter.  Instructions for this operation can be found at http://www.filetransporter.com/knowledgebase/?article=AA-00318.  It is also helpful if you can capture the log file close to the time of the error.
@@ -186,6 +197,8 @@ Yes there is a version two that has been announced. We don't have any data on th
     Connected Data, Inc.
 
 ----
+
+...I tried to be polite...
 
     From IT manager to IT manager, at no point in time in the past TWO MONTHS, nor 6 emails have I had one diagnostic suggestion.
 
@@ -205,7 +218,11 @@ Yes there is a version two that has been announced. We don't have any data on th
 
     Thank you.
 
+...and ask for specifics....
+
 ----
+
+...it got me nowhere.  Another pointless email.
 
     Justin,
 
@@ -219,10 +236,13 @@ Yes there is a version two that has been announced. We don't have any data on th
     Support Manager
     Connected Data, Inc.
 
+At this point, I said 'fuck it'.  I understand it was a kickstarter, not every product is good.  I was content to just leave it, knowing that it would not do what I needed or wanted it to do.
+
 #### July 16
 
-    Justin,
+I have pretty much given up when they poked me again.
 
+    Justin,
 
     I didn't see a response from you so I am resending the email I previously sent:
 
@@ -237,6 +257,8 @@ Yes there is a version two that has been announced. We don't have any data on th
     Connected Data, Inc.
 
 ----
+
+This email could not be more direct and even includes a potential avenue of diagnostics.
 
     Bryan,
 
@@ -255,6 +277,8 @@ Yes there is a version two that has been announced. We don't have any data on th
     [1] https://forums.boxcryptor.com/topic/boxcryptor-for-mac-finder-needs-refresh-for-displaying-accurate-filenamesdirectories
 
 #### July 18
+
+And yet.. still more vagaries and pointlessness, completely and utterly ignoring my suggestion.
 
     Justin,
 
