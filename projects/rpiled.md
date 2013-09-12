@@ -91,7 +91,7 @@ Download and extract the latest version of node.
 Create and copy the binaries to their new home, give the current user ownership of the directory.
 
     sudo mkdir /opt/node
-    sudo cp -r node-v0.10.13-linux-arm-pi/* /opt/node
+    sudo cp -r node-v0.10.17-linux-arm-pi/* /opt/node
     sudo chown -R $USER /opt/node
 
 Set up login scripts. Copy the following into `/etc/profile`
