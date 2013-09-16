@@ -2,7 +2,7 @@
 layout: note
 title: RaspberryPi - RGB LED Strip Lighting
 published: false
-last_modified: 2013-09-09 13:37:00 -0400
+last_modified: 2013-09-16 13:37:00 -0400
 ---
 
 #### Preface
@@ -21,33 +21,47 @@ to provide a REST API to both set and get the parameters.
 
 The following is a parts list that I purchased from [adafruit.com](adafruit.com).
 
-* 1x RGB LED weatherproof flexi-strip 30 LED - (1m) [ID:285] = $16.00
-* 1x Solderless Analog RGB LED Strip Clip Sampler [ID:1004] = $5.90
-* 1x Breadboarding wire bundle [ID:153] = $6.00
-* 3x N-channel power MOSFET (30V / 60A) [ID:355] = $3.75
 * 1x Raspberry Pi Model B 512MB RAM [ID:998] = $39.95
-* 1x Adafruit Assembled Pi Cobbler Breakout + Cable for Raspberry Pi [ID:914] = $7.95
-* 1x Full sized breadboard [ID:239] = $7.95
+* 1x Adafruit 24-Channel 12-bit PWM LED Driver - SPI Interface - TLC5947 [ID:1429] = $14.95
+* 1x RGB LED weatherproof flexi-strip 30 LED - (1m) [ID:285] = $16.00
+* 1x Adafruit Half-size Perma-Proto Raspberry Pi Breadboard PCB Kit = $5.95
+* 3x N-channel power MOSFET (30V / 60A) [ID:355] = $3.75
 * 1x 12V 5A switching power supply [ID:352] = $24.95
-* 1x Adafruit 12-Channel 16-bit PWM LED Driver - SPI Interface - TLC59711 [ID:1455] = $7.50
 
-Notably missing, is a case, a 5V Micro USB power supply and a 4GB SD card for the Raspberry Pi.  The parts list,
-with the missing items, is around $120.
+If this is your first project or your toolkit is empty, you should stock up on the following:
+
+* Adafruit Assembled Pi Cobbler Breakout + Cable for Raspberry Pi[ID:914] = $7.95
+* Full sized breadboard[ID:239] = $7.95
+* Extra-long break-away 0.1in 16-pin strip male header (5 pieces) [ID:400]
+* Female/Female Jumper Wires - 40 x 6in = $6.95
+* Male/Male Jumper Wires - 40 x 6in = $7.95
+
+Notably missing, is a case, a 5V Micro USB power supply and a 4GB SD card for the Raspberry Pi.
+
+##### Notes
+
+I found the Solderless Analog RGB LED Strip Clip Sampler [ID:1004] AWFUL!  They are aggravating and annoying
+to line up all four wires at the same time.  Buy yourself meters of four-wire RGB+ cable from Amazon and use
+solder and heat-shrink tubing.
+
+The Breadboarding wire bundle [ID:153] was less than fantastic, the pins were too thin.  Since your final
+project will sit on the Perma-Proto board, just buy Female/Female and Male/Male jumper wires and pin headers
+Found them cheaper on Amazon.
 
 #### Wiring Diagram
 
-<img src="../img/rpiled.jpg">
+<img src="http://i.imgur.com/S2eEdve.png">
 
 ##### The Circuit
 
 The circuit generally follows [this tutorial](http://learn.adafruit.com/rgb-led-strips/usage).
 
-* Hook up the RPi to the 12-channel PWM breakout board.
-* Connect the 3.3V output from the RPi to VCC on the 12-channel PWM breakout board. Leave V+ unconnected.
+* Hook up the RPi to the 24-channel PWM breakout board.
+* Connect the 3.3V output from the RPi to V+ on the 24-channel PWM breakout board.
 * Connect the +12V from the LED strip to an external power supply (do NOT use your pi for this!)
 * Connect the ground side of the power supply to the RPi ground
-* I used the N-channel MOSFETs - three of them, one for each channel
-* We will use the PWM outputs to connect to the MOSFETs.
+* I used the N-channel MOSFETs - three of them, one for each channel.
+* We will use the PWM outputs to connect to the MOSFETs Gates.
   * Connect up the PWM output 0 to the MOSFET with the red wire from the LED strip.
   * Output 1 goes to green
   * Output 2 goes to blue.
