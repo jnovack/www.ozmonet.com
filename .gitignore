@@ -7,4 +7,5 @@ Thumbs.db
 .DS_Store
 _tmp/*
 !.gitkeep
+atom.xml
 categories/
