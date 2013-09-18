@@ -50,7 +50,7 @@ Found them cheaper on Amazon.
 
 #### Wiring Diagram
 
-<img src="http://i.imgur.com/S2eEdve.png">
+<img src="http://i.imgur.com/kxdTt4K.png">
 
 ##### The Circuit
 
