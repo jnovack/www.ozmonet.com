@@ -28,11 +28,16 @@ The following is a parts list that I purchased from [adafruit.com](adafruit.com)
 * 3x N-channel power MOSFET (30V / 60A) [ID:355] = $3.75
 * 1x 12V 5A switching power supply [ID:352] = $24.95
 
+Additionally, from Radio Shack or other electronics supply store.
+
+* 1x 1k Ohm (1/4 watt) Resistors (5 Pack) [ID: 2711321] = $1.49 
+
 If this is your first project or your toolkit is empty, you should stock up on the following:
 
 * Adafruit Assembled Pi Cobbler Breakout + Cable for Raspberry Pi[ID:914] = $7.95
 * Full sized breadboard[ID:239] = $7.95
-* Extra-long break-away 0.1in 16-pin strip male header (5 pieces) [ID:400]
+* Extra-long break-away 0.1in 16-pin strip male header (5 pieces) [ID:400] = $3.00
+* Break-away 0.1in 36-pin strip male header (10 pieces) [ID: 392] = $7.50
 * Female/Female Jumper Wires - 40 x 6in = $6.95
 * Male/Male Jumper Wires - 40 x 6in = $7.95
 
@@ -45,8 +50,11 @@ to line up all four wires at the same time.  Buy yourself meters of four-wire RG
 solder and heat-shrink tubing.
 
 The Breadboarding wire bundle [ID:153] was less than fantastic, the pins were too thin.  Since your final
-project will sit on the Perma-Proto board, just buy Female/Female and Male/Male jumper wires and pin headers
-Found them cheaper on Amazon.
+project will sit on the Perma-Proto board, just buy Female/Female and Male/Male jumper wires and pinheaders.
+Found the jumpers cheaper on Amazon.
+
+The LEDs are nice, but you can get 5 METERS for the same price from a no-name brand on Amazon. I bought 3
+strips, and each of them worked just fine, and just as bright.
 
 #### Wiring Diagram
 
@@ -65,6 +73,7 @@ The circuit generally follows [this tutorial](http://learn.adafruit.com/rgb-led-
   * Connect up the PWM output 0 to the MOSFET with the red wire from the LED strip.
   * Output 1 goes to green
   * Output 2 goes to blue.
+* Connect the channel V+ line to the MOSFET Gates through the 1k resistor.
 
 #### Getting Started
 
