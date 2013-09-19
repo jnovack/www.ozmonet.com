@@ -16,6 +16,7 @@ description: Project list
       <div class="pull-right">
         <span class='label
         {% if post.status == "stale" %}label-important{% endif %}
+        {% if post.status == "current" %}label-success{% endif %}
         '>{{ post.status }}</span>
       </div>
       {% endif %}
