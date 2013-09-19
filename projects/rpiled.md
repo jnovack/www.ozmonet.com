@@ -1,8 +1,11 @@
 ---
 layout: note
-title: RaspberryPi - RGB LED Strip Lighting
-published: false
-last_modified: 2013-09-16 13:37:00 -0400
+title: RGB LED Strip Lights
+excerpt: Control RGB strip lights with an Adafruit PWM and a Raspberry Pi running NodeJS.  Just in time for the Holidays.
+promote: true
+published: true
+status: current
+last_modified: 2013-09-19 13:37:00 -0400
 ---
 
 #### Preface
@@ -50,8 +53,8 @@ to line up all four wires at the same time.  Buy yourself meters of four-wire RG
 solder and heat-shrink tubing.
 
 The Breadboarding wire bundle [ID:153] was less than fantastic, the pins were too thin.  Since your final
-project will sit on the Perma-Proto board, just buy Female/Female and Male/Male jumper wires and pinheaders.
-Found the jumpers cheaper on Amazon.
+project will sit on the Perma-Proto board, just buy Female/Female jumper wires and pinheaders. Found the
+jumpers cheaper on Amazon.
 
 The LEDs are nice, but you can get 5 METERS for the same price from a no-name brand on Amazon. I bought 3
 strips, and each of them worked just fine, and just as bright.
@@ -97,12 +100,7 @@ Second, add the following lines to `/etc/modules` and reboot.
     i2c-bcm2708
     i2c-dev
 
-After the reboot, install the `i2c-tools` package for troubleshooting.
-
-    $ sudo apt-get install i2c-tools
-
-If you have already built your circuit and connected it your RPi, run `sudo i2cdetect -y 1` and you will see
-that addresses `0x40` and `0x70` are in use.
+Unfortunately, there is no way to tell if the SPI device is connected and working.
 
 ##### Software
 
@@ -117,7 +115,8 @@ Create and copy the binaries to their new home, give the current user ownership 
     sudo cp -r node-v0.10.17-linux-arm-pi/* /opt/node
     sudo chown -R $USER /opt/node
 
-Set up login scripts. Copy the following into `/etc/profile`
+Set up login scripts. Copy the following into `/etc/bashrc` (`/etc/bashrc` gets run on non-interactive
+shells, allowing you to run ssh commands, e.g. `ssh pi@rpi -c node index.js`).
 
     NODE_JS_HOME="/opt/node"
     PATH="$PATH:$NODE_JS_HOME/bin"
@@ -127,17 +126,19 @@ globally (`npm install -g package`) without requiring sudo.
 
 ##### The Application
 
-Heavily borrow code from http://www.github.com/jnovack/lifx.js
+The top layer is just my own doing, but stands upon the shoulders of [node-leddriver](https://github.com/fjw/node-leddriver).
+
+The source for my application is located at [https://github.com/jnovack/rpiled.js](https://github.com/jnovack/rpiled.js)
 
 #### References
 
-1. https://github.com/kelly/node-i2c
-1. https://github.com/fjw/node-leddriver
-1. https://github.com/fjw/node-simplespi
-1. https://github.com/pandringa/piStuff/blob/master/pwmTest.js
-1. https://github.com/smithje/RGB_LED_Driver
-1. https://github.com/technicalmachine/servo-pca9685
-1. http://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c
-1. http://learn.adafruit.com/adafruit-16-channel-servo-driver-with-raspberry-pi/configuring-your-pi-for-i2c
-1. http://blog.rueedlinger.ch/2013/03/raspberry-pi-and-nodejs-basic-setup/
-1. http://www.instructables.com/id/Breadboard-Basics-for-Absolute-Begginers/
+1. [https://github.com/fjw/node-leddriver](https://github.com/fjw/node-leddriver)
+1. [https://github.com/fjw/node-simplespi](https://github.com/fjw/node-simplespi)
+1. [https://github.com/pandringa/piStuff/blob/master/pwmTest.js](https://github.com/pandringa/piStuff/blob/master/pwmTest.js)
+1. [https://github.com/smithje/RGB_LED_Driver](https://github.com/smithje/RGB_LED_Driver)
+1. [https://github.com/kelly/node-i2c](https://github.com/kelly/node-i2c)
+1. [https://github.com/technicalmachine/servo-pca9685](https://github.com/technicalmachine/servo-pca9685)
+1. [http://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c](http://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c)
+1. [http://learn.adafruit.com/adafruit-16-channel-servo-driver-with-raspberry-pi/configuring-your-pi-for-i2c](http://learn.adafruit.com/adafruit-16-channel-servo-driver-with-raspberry-pi/configuring-your-pi-for-i2c)
+1. [http://blog.rueedlinger.ch/2013/03/raspberry-pi-and-nodejs-basic-setup/](http://blog.rueedlinger.ch/2013/03/raspberry-pi-and-nodejs-basic-setup/)
+1. [http://www.instructables.com/id/Breadboard-Basics-for-Absolute-Begginers/](http://www.instructables.com/id/Breadboard-Basics-for-Absolute-Begginers/)
