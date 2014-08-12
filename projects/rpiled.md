@@ -33,7 +33,7 @@ The following is a parts list that I purchased from [adafruit.com](adafruit.com)
 
 Additionally, from Radio Shack or other electronics supply store.
 
-* 1x 1k Ohm (1/4 watt) Resistors (5 Pack) [ID: 2711321] = $1.49 
+* 1x 1k Ohm (1/4 watt) Resistors (5 Pack) [ID: 2711321] = $1.49
 
 If this is your first project or your toolkit is empty, you should stock up on the following:
 
@@ -62,6 +62,8 @@ strips, and each of them worked just fine, and just as bright.
 #### Wiring Diagram
 
 <img src="http://i.imgur.com/kxdTt4K.png">
+
+[Download the Fritzing Sketch](https://www.github.com/jnovack/rpiled.js)
 
 ##### The Circuit
 
@@ -130,11 +132,34 @@ The top layer is just my own doing, but stands upon the shoulders of [node-leddr
 
 The source for my application is located at [https://github.com/jnovack/rpiled.js](https://github.com/jnovack/rpiled.js)
 
+#### Extra Credit
+
+The above version of the circuit has two issues, one of which was noted in the diagram.  The other
+was found through testing.
+
+1. The MOSFETs releases the Source when the Gate is HIGH. However, the 1429 believes the LEDs are
+on when the voltage is LOW.
+1. The PWM clears its internal buffers before sending the new data, therefore, fading between two
+colors yields a momentary spike to white (while inverted, or black normally), before the new color
+is set.
+
+To solve both of these issues, a second layer of MOSFETs is added to flip the inversion.
+Additionally, it has the added benefit of smoothing the fading by delaying the impact of the
+cleared data as it passes through the first set of MOSFETs.
+
+<img src="http://i.imgur.com/4fEfovFl.png">
+
+To achieve this, you will need another set of MOSFETs and Resistors:
+
+* 3x N-channel power MOSFET (30V / 60A) [Adafruit ID:355] = $3.75
+* 1x 1k Ohm (1/4 watt) Resistors (5 Pack) [Radio Shack ID: 2711321] = $1.49
+
 #### References
 
 1. [https://github.com/fjw/node-leddriver](https://github.com/fjw/node-leddriver)
 1. [https://github.com/fjw/node-simplespi](https://github.com/fjw/node-simplespi)
 1. [https://github.com/pandringa/piStuff/blob/master/pwmTest.js](https://github.com/pandringa/piStuff/blob/master/pwmTest.js)
+1. [http://forums.adafruit.com/viewtopic.php?p=218857#p218857](http://forums.adafruit.com/viewtopic.php?p=218857#p218857)
 1. [https://github.com/smithje/RGB_LED_Driver](https://github.com/smithje/RGB_LED_Driver)
 1. [https://github.com/kelly/node-i2c](https://github.com/kelly/node-i2c)
 1. [https://github.com/technicalmachine/servo-pca9685](https://github.com/technicalmachine/servo-pca9685)
