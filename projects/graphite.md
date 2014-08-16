@@ -84,6 +84,9 @@ That was the easy part! Now time to pull our your hair.  Until I get more time t
 If the retentions line is parsed improperly, you will get a `ValueError: need more than 1 value to unpack` error.
 Double check your commas and colons to make sure your lines are proper.
 
+*The single largest issue with setting up graphite is the tweaking and massaging of how often your data should be flushed
+and how long it should be retained.*  On a production box, you will not want everything to have the same retention pattern.
+
 The above code makes every statistic save 10 seconds for 4 hours, which then aggregates to 1 minute for 3 days,
 5 minutes for 8 days, and finally 1 hour for 1 year.  This is an important topic, and you will not want this for
 ALL of your metrics, but we will put a pin in this topic for now.
@@ -128,6 +131,13 @@ off your collection daemons first.
 so that you can split the load.  Since it is just listening for data and sending it off in an interval, resource
 utilization is relatively low.
 
+The exampleConfig just really needs one line of change.  Just add the following before the last curly brace.
+
+    , graphite: { legacyNamespace: false }
+
+This will save you a lot of headache later with aggregation, which will already be a headache.  The new namespace will
+ensure that counts are sent as `.count`, and per timeperiod rates as `.rate` to synchronize with your aggregation rules.
+
     cd /usr/local/src/
     node stats.js exampleConfig.js
 
@@ -146,6 +156,42 @@ is that it can send directly to Carbon rather than it's own RRDs.  CollectD has 
 each of your servers, or on a collection server (like Nagios) to get stats on each remote device.  Resource utilization
 is pretty high from CollectD, because it is actively seeking statistics.
 
+#### Aggregation
+
+POP QUIZ: *Why is the first graph showing peaks at 150 when the second graph is showing peaks of 720?*
+
+<img src="../img/graphite240.png" align="left">
+<img src="../img/graphite241.png">
+
+Welcome to **Aggregation Aggravation!**
+
+Remember we set the `storage-schema.conf` to keep 10 seconds for 4 hours?  And did you notice that 240 minutes is 4 hours?
+
+The first graph is showing you the full resolution and has 1440 (240 x 6 = (4 hours x 60 mins per hour ) x (60 secs per min
+/ 10 secs per interval)) data points on it.  The second graph only has 240 datapoints on it, because each of those 10 second
+datapoints were summed up to the next resolution (`1m:3d`) of 1 minute.
+
+This brings up a very important point.  When you are selecting the most recent data, be mindful of which resolution you are
+being returned!  Any selection within the first resolution time (`10s:4h`) will give me data in the order of 10 seconds
+
+If you wanted to see per *minute* statistics in the last hour easily, you should not be storing 10 second data for longer
+than 59 minutes for `count` data.  Example, set your retention pattern to `10s:59m, 1m:3d, 5m:8d`. Selecting the last hour
+(60 mins) of data will cross retention boundries (as it is greater than 59 mins, but less than 3 days) and thus your data
+will be presented to you in 1 minute increments.
+
+If the neartime (near-realtime) factor is not important to you, then why keep intervals of 10 seconds at all if we just want
+to see things per minute?  You don't have to! But you DO have to consider at which interval is your data flushing to carbon!
+
+The aggregation rules are stored in `storage-aggregation.conf` and they really can be default. As the data hits the next
+retention interval, it will `sum` all metrics ending with `.count`, and will `average` almost everything else (`min` and `max`
+being the exceptions, where it will take the `min`, and, you guessed it, `max`, respectively).
+
+Of course, since graphite is so powerful, you can have your cake (10 second interval near-realtime stats) AND eat it (viewing
+recent datapoints on a per-minute basis) too!  The default graphing engine has a `summarize` function. If I apply the
+`summarize` function to the 240 minute chart (which will give me the 10 second intervals and the 150 peak) at an interval of
+`1min`, I can get the the peaks to 720, just like I want.
+
+`summarize(stats.counters.web.www_hostname_com.GET.200.count,"1min")`
 
 #### References
 
