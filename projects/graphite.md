@@ -68,7 +68,7 @@ Finally, let's get grab the additional components.
 
 That was the easy part! Now time to pull our your hair.  Until I get more time to explain, here are my configs.
 
-    cp example-graphite-vhost.conf /etc/httpd/conf.d/graphite.conf
+    cp /opt/graphite/examples/example-graphite-vhost.conf /etc/httpd/conf.d/graphite.conf
     cp /opt/graphite/conf/storage-schemas.conf.example /opt/graphite/conf/storage-schemas.conf
     cp /opt/graphite/conf/storage-aggregation.conf.example /opt/graphite/conf/storage-aggregation.conf
     cp /opt/graphite/conf/graphite.wsgi.example /opt/graphite/conf/graphite.wsgi
