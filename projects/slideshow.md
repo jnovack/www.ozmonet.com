@@ -2,7 +2,7 @@
 layout: note
 title: Eye-Fi Slideshow
 excerpt: I have read many posts trying to create a slideshow of latest pictures for weddings, birthdays, funerals, etc from people with a Eye-Fi card in their camera. None of them have done it right, this is my attempt, and it works better than the others.  
-promote: true
+promote: false
 published: true
 last_modified: 2013-01-10 00:00:00 +0000
 ---
