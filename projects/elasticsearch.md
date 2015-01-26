@@ -20,7 +20,7 @@ against LogStash, it is just out of the scope of the article.
 I assume you are familiar with the command-line, and have basic linux system administration
 skills higher than "I installed it once!".
 
-For my single node installation, I'm using a CentOS 7 machine with 2GB RAM and 20GB harddrive. This
+For my single node installation, I am using a CentOS 7 machine with 2GB RAM and 20GB harddrive. This
 is plenty for a "home" installation.  After install, you should have 15GB of disk space free for
 data and elasticsearch takes up about 700MB of RAM while being fed about 10 documents a second. It
 is VERY slim.  The sample database takes up 16MB on disk and has 110k rows.
@@ -151,7 +151,8 @@ mapping on the index `shakesphere` run the following:
     ';
 
 This will ensure that both `speaker` and `play_name` are not analyzed by the built-in indexing
-analyzer and the string will remain as "King Henry" rather than "King" and "Henry".
+analyzer and the string will remain as "King Henry" rather than "King" and "Henry".  This is
+important when you start aggregating your fields (such as lines per speaker).
 
 Now we can import the data.
 
@@ -162,7 +163,7 @@ After a few minutes and lots of data on screen, you should have a fully populate
 Navigate to `http://localhost:9200/_plugin/marvel/` and become familiar with your new cluster.
 
 To see your data, navigate to
-`http://elasticsearch:9200/_plugin/marvel/kibana/index.html#/dashboard/file/guided.json`.  When you
+`http://localhost:9200/_plugin/marvel/kibana/index.html#/dashboard/file/guided.json`.  When you
 name and save this page, you will be presented with a new URL you can bookmark.
 
 #### References
