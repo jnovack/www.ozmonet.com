@@ -4,7 +4,6 @@ title: Graphite on CentOS 7
 excerpt: Hurdles I had to overcome installing my first graphite instance. All other documentation was confusing.
 promote: true
 published: true
-status: current
 last_modified: 2014-08-01 13:37:00 -0400
 ---
 
@@ -180,7 +179,7 @@ than 59 minutes for `count` data.  Example, set your retention pattern to `10s:5
 will be presented to you in 1 minute increments.
 
 If the neartime (near-realtime) factor is not important to you, then why keep intervals of 10 seconds at all if we just want
-to see things per minute?  You don't have to! But you DO have to consider at which interval is your data flushing to carbon!
+to see things per minute?  You do not have to! But you DO have to consider at which interval is your data flushing to carbon!
 
 The aggregation rules are stored in `storage-aggregation.conf` and they really can be default. As the data hits the next
 retention interval, it will `sum` all metrics ending with `.count`, and will `average` almost everything else (`min` and `max`
