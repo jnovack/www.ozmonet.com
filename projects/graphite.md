@@ -42,9 +42,9 @@ There are a number of different applications which make up the core package...
 We are going to install each of those five (5) components, so using a base CentOS 7 image, I ran the following:
 
     yum -y update
-    yum install -y httpd net-snmp perl pycairo mod_wsgi python-devel git gcc-c++
+    yum install -y httpd net-snmp perl pycairo mod_wsgi python-devel git gcc-c++ epel-release
 
-After adding the EPEL repo (pretty much a requirement these days), I finished the installation.
+The following are available once you install the EPEL repo (pretty much a requirement these days).
 
     yum install -y python-pip node npm
 
